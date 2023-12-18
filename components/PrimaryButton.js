@@ -10,4 +10,4 @@ const PrimaryButton = ({children}) => {
 
 export default PrimaryButton;
 
-const styles = StyleSheet.create({});
+// const styles = StyleSheet.create({});
