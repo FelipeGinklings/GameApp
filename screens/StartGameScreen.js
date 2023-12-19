@@ -10,6 +10,8 @@ const StartGameScreen = () => {
 				keyboardType="number-pad"
 				autoCapitalize="none"
 				autoCorrect={false}
+        color='#f2b95e'
+        cursorColor={'#f2b95e'}
 			/>
 
 			<View style={styles.buttonsContainer}>
@@ -33,8 +35,8 @@ const styles = StyleSheet.create({
 		marginTop: 100,
 		marginHorizontal: 24,
 		padding: 16,
-		backgroundColor: '#3b021f',
-		borderRadius: 8,
+		backgroundColor: '#57a2aa',
+		borderRadius: 12,
 		shadowColor: 'black',
 		// ANDROID
 		elevation: 4,
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
 		height: 50,
 		width: 50,
 		fontSize: 32,
-		borderBottomColor: '#ddb52f',
+		borderBottomColor: '#f2b95e',
 		borderBottomWidth: 2,
 		color: '#ddb52f',
 		marginVertical: 8,
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
-  buttonContainer: {
-    flex: 1 
-  }
+	buttonContainer: {
+		flex: 1,
+	},
 });
