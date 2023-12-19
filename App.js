@@ -20,7 +20,6 @@ const App = () => {
 	return (
 		<ImageBackground
 			source={require('./assets/images/background.png')}
-			resizeMode="cover"
 			style={styles.rootScreen}
 		>
 			<SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
