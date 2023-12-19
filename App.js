@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { StyleSheet, ImageBackground } from 'react-native';
+import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
+
 import StartGameScreen from './screens/StartGameScreen';
 import GameScreen from './screens/GameScreen';
 
@@ -21,9 +22,8 @@ const App = () => {
 			source={require('./assets/images/background.png')}
 			resizeMode="cover"
 			style={styles.rootScreen}
-			imageStyle={styles.backgroundImage}
 		>
-			{screen}
+			<SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
 		</ImageBackground>
 	);
 };
