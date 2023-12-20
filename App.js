@@ -14,7 +14,7 @@ const App = () => {
 	let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
 
 	if (userNumber) {
-		screen = <GameScreen />;
+		screen = <GameScreen userNumber={userNumber} />;
 	}
 
 	return (
