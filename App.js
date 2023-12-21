@@ -1,28 +1,42 @@
 import { useState } from 'react';
 import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 // My Screens
 import StartGameScreen from './screens/StartGameScreen';
 import GameScreen from './screens/GameScreen';
 import GameOverScreen from './screens/GameOverScreen';
+import Colors from './constants/colors';
 
 const App = () => {
 	const [userNumber, setUserNumber] = useState();
 	const [gameIsOver, setGameIsOver] = useState(true);
 
+	const [fontsLoaded] = useFonts({
+		'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
+		'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+	});
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
 	const pickedNumberHandler = (pickedNumberHandler) => {
 		setUserNumber(pickedNumberHandler);
-    setGameIsOver(false); 
+		setGameIsOver(false);
 	};
 
 	const gameOverHandler = () => {
 		setGameIsOver(true);
 	};
 
-  let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
+	let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
 
 	if (userNumber) {
-		screen = <GameScreen userNumber={userNumber} onGameOver={gameOverHandler} />;
+		screen = (
+			<GameScreen userNumber={userNumber} onGameOver={gameOverHandler} />
+		);
 	}
 
 	if (gameIsOver && userNumber) {

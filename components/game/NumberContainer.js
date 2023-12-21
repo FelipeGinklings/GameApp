@@ -13,8 +13,6 @@ export default NumberContainer;
 
 const styles = StyleSheet.create({
 	container: {
-		// borderWidth: 4,
-		// backgroundColor: Colors.primary700,
 		padding: 24,
 		margin: 24,
 		borderRadius: 8,
@@ -24,6 +22,6 @@ const styles = StyleSheet.create({
 	numberText: {
 		color: Colors.secondary500,
 		fontSize: 36,
-		fontWeight: 'bold',
+    fontFamily: 'open-sans-bold',
 	},
 });

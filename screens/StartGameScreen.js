@@ -82,7 +82,7 @@ export default StartGameScreen;
 const styles = StyleSheet.create({
 	rootContainer: {
 		flex: 1,
-		marginTop: 100,
+		marginTop: 55,
 		alignItems: 'center',
 	},
 	numberInput: {
