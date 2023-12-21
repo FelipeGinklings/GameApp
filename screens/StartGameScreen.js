@@ -39,11 +39,11 @@ const StartGameScreen = ({ onPickNumber }) => {
 		onPickNumber(chosenNumber);
 	};
 
-  return (
+	return (
 		<View style={styles.rootContainer}>
-      <Title>Guess My Number</Title>
-      <Card>
-        <InstructionText>Enter a Number</InstructionText>
+			<Title>Guess My Number</Title>
+			<Card>
+				<InstructionText>Enter a Number</InstructionText>
 				<TextInput
 					style={styles.numberInput}
 					maxLength={2}
@@ -70,7 +70,7 @@ const StartGameScreen = ({ onPickNumber }) => {
 						</PrimaryButton>
 					</View>
 				</View>
-      </Card>
+			</Card>
 		</View>
 	);
 };
@@ -78,11 +78,11 @@ const StartGameScreen = ({ onPickNumber }) => {
 export default StartGameScreen;
 
 const styles = StyleSheet.create({
-  rootContainer: {
-    flex: 1,
-    marginTop: 100,
-    alignItems: 'center',
-  },
+	rootContainer: {
+		flex: 1,
+		marginTop: 100,
+		alignItems: 'center',
+	},
 	numberInput: {
 		height: 50,
 		width: 50,
@@ -93,12 +93,9 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		textAlign: 'center',
 	},
-
 	buttonsContainer: {
 		paddingTop: 10,
 		flexDirection: 'row',
-		justifyContent: 'center',
-		alignItems: 'center',
 	},
 	buttonContainer: {
 		flex: 1,
