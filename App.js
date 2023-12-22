@@ -28,8 +28,9 @@ const App = () => {
 		setGameIsOver(false);
 	};
 
-	const gameOverHandler = () => {
+	const gameOverHandler = (numberOfRounds) => {
 		setGameIsOver(true);
+    setGuessRounds(numberOfRounds);
 	};
 
   const startNewGameHandler = () => {
