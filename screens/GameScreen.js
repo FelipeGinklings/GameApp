@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { StyleSheet, View, Alert, Text } from 'react-native';
+import { StyleSheet, View, Alert, FlatList } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 // My components
@@ -8,6 +8,8 @@ import NumberContainer from '../components/game/NumberContainer';
 import PrimaryButton from '../components/ui/PrimaryButton';
 import Card from '../components/ui/Card';
 import InstructionText from '../components/ui/InstructionText';
+import Highlight from '../components/ui/Highlight';
+import Colors from '../constants/colors';
 
 const generateRandomBetween = (min, max, exclude) => {
 	const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -93,11 +95,17 @@ const GameScreen = ({ userNumber, onGameOver }) => {
 					</View>
 				</View>
 			</Card>
-			<View>
-				{guessRounds.map((guessRounds) => (
-					<Text key={guessRounds}>{guessRounds} </Text>
-				))}
-			</View>
+			<FlatList
+				data={guessRounds}
+				renderItem={(itemData) => {
+					return (
+						<Highlight color={Colors.red500}>
+							{itemData.item}
+						</Highlight>
+					);
+				}}
+        keyExtractor={(item) => item}
+			></FlatList>
 		</View>
 	);
 };
