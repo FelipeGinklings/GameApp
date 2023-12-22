@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Pressable } from 'react-native';
 
 import Colors from '../../constants/colors';
 
-const PrimaryButton = ({ children, onPress }) => {
+const PrimaryButton = ({ children, onPress, style }) => {
 	return (
 		<View style={styles.buttonOuterContainer}>
 			<Pressable
@@ -14,7 +14,7 @@ const PrimaryButton = ({ children, onPress }) => {
 						: styles.buttonInnerContainer
 				}
 			>
-				<Text style={styles.buttonText}> {children} </Text>
+				<Text style={[styles.buttonText, style]}> {children} </Text>
 			</Pressable>
 		</View>
 	);
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
 		elevation: 2,
 	},
 	buttonText: {
-		fontFamily: 'open-sans',
+    fontFamily: 'open-sans',
 		color: 'white',
 		textAlign: 'center',
 	},

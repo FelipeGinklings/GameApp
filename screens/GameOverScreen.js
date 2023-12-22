@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image, Text } from 'react-native';
+import { StyleSheet, View, Image, Text, Dimensions } from 'react-native';
 
 // My components
 import Title from '../components/ui/Title';
@@ -22,7 +22,10 @@ const GameOverScreen = ({ roundsNumber, userNumber, onStartNewGame }) => {
 				rounds to guess the number{' '}
 				<Highlight color={Colors.orange600}>{userNumber}</Highlight>.
 			</Text>
-			<PrimaryButton onPress={onStartNewGame}>
+			<PrimaryButton
+				onPress={onStartNewGame}
+				style={{ margin: 8, fontSize: 16}}
+			>
 				Start New Game
 			</PrimaryButton>
 		</View>
@@ -30,6 +33,8 @@ const GameOverScreen = ({ roundsNumber, userNumber, onStartNewGame }) => {
 };
 
 export default GameOverScreen;
+
+const deviceWidth = Dimensions.get('window').width
 
 const styles = StyleSheet.create({
 	rootContainer: {
@@ -39,9 +44,9 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	imageContainer: {
-		width: 300,
-		height: 300,
-		borderRadius: 150,
+		width: deviceWidth < 380 ? 150 : 300,
+		height: deviceWidth < 380 ? 150 : 300,
+		borderRadius: deviceWidth < 380 ? 75 : 150,
 		borderWidth: 3,
 		borderColor: Colors.yellow500,
 		overflow: 'hidden',
