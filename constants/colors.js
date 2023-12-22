@@ -1,14 +1,13 @@
 const Colors = {
 	// Blue Shades
-	primary500: '#a0d4d8',
-	primary600: '#8bc5c9',
-	primary700: '#57a2aa',
+	blue500: '#a0d4d8',
+	blue600: '#8bc5c9',
+	blue700: '#57a2aa',
 	// Red Shade
-	secondary500: '#e4314e',
-  // Yellow Shades
-	secondary400: '#ffc05b',
-  secondary600: '#d88d0e'
-  
+	red500: '#e4314e',
+	// Yellow Shades
+	yellow400: '#ffc05b',
+	yellow500: '#d88d0e',
 };
 
 export default Colors;

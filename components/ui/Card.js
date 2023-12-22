@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 		marginTop: 36,
 		marginHorizontal: 24,
 		padding: 16,
-		backgroundColor: Colors.primary700,
+		backgroundColor: Colors.blue700,
 		borderRadius: 12,
 		shadowColor: 'black',
 		// ANDROID

@@ -52,8 +52,8 @@ const StartGameScreen = ({ onPickNumber }) => {
 					keyboardType="number-pad"
 					autoCapitalize="none"
 					autoCorrect={false}
-					color={Colors.secondary400}
-					cursorColor={Colors.secondary400}
+					color={Colors.yellow400}
+					cursorColor={Colors.yellow400}
 					onChangeText={numberInputHandler}
 					value={enteredNumber}
 				/>
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
 		height: 50,
 		width: 50,
 		fontSize: 32,
-		borderBottomColor: Colors.secondary400,
+		borderBottomColor: Colors.yellow400,
 		borderBottomWidth: 2,
 		marginVertical: 8,
 		fontWeight: 'bold',

@@ -11,11 +11,11 @@ const styles = StyleSheet.create({
 	title: {
 		fontFamily: 'open-sans-bold',
 		fontSize: 28,
-		color: Colors.secondary500,
+		color: Colors.red500,
 		textAlign: 'center',
 		paddingVertical: 15,
 		borderBottomWidth: 2,
-		borderColor: Colors.secondary600,
+		borderColor: Colors.yellow500,
 		marginHorizontal: 24,
 	},
 });
