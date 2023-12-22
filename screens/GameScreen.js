@@ -32,6 +32,11 @@ const GameScreen = ({ userNumber, onGameOver }) => {
 		}
 	}, [currentGuess, userNumber, onGameOver]);
 
+	useEffect(() => {
+		minBoundary = 1;
+		maxBoundary = 100;
+	}, []);
+
 	const nextGuessHandler = (direction) => {
 		// direction => 'lower' or 'greater'
 		if (
@@ -70,11 +75,7 @@ const GameScreen = ({ userNumber, onGameOver }) => {
 						<PrimaryButton
 							onPress={nextGuessHandler.bind(this, 'greater')}
 						>
-							<Ionicons
-								name="md-add"
-								size={24}
-								color={'white'}
-							/>
+							<Ionicons name="md-add" size={24} color={'white'} />
 						</PrimaryButton>
 					</View>
 					<View style={styles.buttonContainer}>
