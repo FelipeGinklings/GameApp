@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
 		borderBottomWidth: 2,
 		borderColor: Colors.yellow500,
 		marginHorizontal: 24,
-		maxWidth: '90%',
-    // width: 300
+    maxWidth: '88%',
+    width: 335
 	},
 });
