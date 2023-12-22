@@ -5,6 +5,8 @@ import {
 	TextInput,
 	Alert,
 	useWindowDimensions,
+	KeyboardAvoidingView,
+	ScrollView,
 } from 'react-native';
 
 // My components
@@ -52,38 +54,47 @@ const StartGameScreen = ({ onPickNumber }) => {
 	const marginTopDistance = height < 400 ? 25 : 55;
 
 	return (
-		<View style={[styles.rootContainer, { marginTop: marginTopDistance }]}>
-			<Title>Guess My Number</Title>
-			<Card>
-				<InstructionText>Enter a Number</InstructionText>
-				<TextInput
-					style={styles.numberInput}
-					maxLength={2}
-					keyboardType="number-pad"
-					autoCapitalize="none"
-					autoCorrect={false}
-					color={Colors.yellow400}
-					cursorColor={Colors.yellow400}
-					onChangeText={numberInputHandler}
-					value={enteredNumber}
-				/>
+		<ScrollView style={{ flex: 1 }}>
+			<KeyboardAvoidingView style={{ flex: 1 }} behavior="position">
+				<View
+					style={[
+						styles.rootContainer,
+						{ marginTop: marginTopDistance },
+					]}
+				>
+					<Title>Guess My Number</Title>
+					<Card>
+						<InstructionText>Enter a Number</InstructionText>
+						<TextInput
+							style={styles.numberInput}
+							maxLength={2}
+							keyboardType="number-pad"
+							autoCapitalize="none"
+							autoCorrect={false}
+							color={Colors.yellow400}
+							cursorColor={Colors.yellow400}
+							onChangeText={numberInputHandler}
+							value={enteredNumber}
+						/>
 
-				<View style={styles.buttonsContainer}>
-					<View style={styles.buttonContainer}>
-						<PrimaryButton onPress={confirmInputHandler}>
-							{' '}
-							Confirm
-						</PrimaryButton>
-					</View>
-					<View style={styles.buttonContainer}>
-						<PrimaryButton onPress={resetInputHandler}>
-							{' '}
-							Reset
-						</PrimaryButton>
-					</View>
+						<View style={styles.buttonsContainer}>
+							<View style={styles.buttonContainer}>
+								<PrimaryButton onPress={confirmInputHandler}>
+									{' '}
+									Confirm
+								</PrimaryButton>
+							</View>
+							<View style={styles.buttonContainer}>
+								<PrimaryButton onPress={resetInputHandler}>
+									{' '}
+									Reset
+								</PrimaryButton>
+							</View>
+						</View>
+					</Card>
 				</View>
-			</Card>
-		</View>
+			</KeyboardAvoidingView>
+		</ScrollView>
 	);
 };
 
