@@ -13,9 +13,11 @@ const styles = StyleSheet.create({
 		fontSize: 28,
 		color: Colors.red500,
 		textAlign: 'center',
-		paddingVertical: 15,
+		paddingVertical: 12,
 		borderBottomWidth: 2,
 		borderColor: Colors.yellow500,
 		marginHorizontal: 24,
+		maxWidth: '90%',
+    // width: 300
 	},
 });
