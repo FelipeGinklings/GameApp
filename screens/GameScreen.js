@@ -77,13 +77,11 @@ const GameScreen = ({ userNumber, onGameOver }) => {
 	const guessRoundsListLength = guessRounds.length;
 
 	// Vertical Mode Styles
-  // screen
+	// screen
 	let alignItemsDistance = '';
 	let paddingVertical = 40;
-  // listItems
-  let widthPercent = ''
-
-  let listItems
+	// listItems
+	let widthPercent = '';
 
 	let content = (
 		<>
@@ -117,12 +115,14 @@ const GameScreen = ({ userNumber, onGameOver }) => {
 	);
 
 	if (width > 500) {
+    // Change screens style for better view
 		alignItemsDistance = 'center';
 		paddingVertical = 0;
-    widthPercent = '100%'
+		widthPercent = '100%';
+    
 		content = (
 			<>
-				<InstructionText style={{marginTop: 15}}>
+				<InstructionText style={{ marginTop: 15 }}>
 					Higher or lower?
 				</InstructionText>
 				<View style={styles.buttonsContainerWide}>
@@ -150,18 +150,19 @@ const GameScreen = ({ userNumber, onGameOver }) => {
 		);
 	}
 
+  // Game Screen Style
+	const screenStyle = {
+		flex: 1,
+		alignItems: alignItemsDistance,
+		paddingVertical: paddingVertical,
+	};
+
 	return (
-		<View
-			style={[
-				styles.screen,
-				{ alignItems: alignItemsDistance },
-				{paddingVertical: paddingVertical},
-			]}
-		>
+		<View style={screenStyle}>
 			<Title>Opponent's Guess</Title>
 			{content}
 			<FlatList
-				style={[styles.listItems, {width: widthPercent}]}
+				style={[styles.listItems, { width: widthPercent }]}
 				data={guessRounds}
 				renderItem={(itemData) => (
 					<GuessLogItem
@@ -181,10 +182,6 @@ const GameScreen = ({ userNumber, onGameOver }) => {
 export default GameScreen;
 
 const styles = StyleSheet.create({
-	screen: {
-		flex: 1,
-    alignItems: 'center',
-	},
 	instructionText: {
 		marginBottom: 12,
 	},
