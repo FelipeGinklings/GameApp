@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
 		shadowOpacity: 0.25,
 		shadowRadius: 3,
 	},
-  itemText: {
-    fontFamily: 'open-sans',
-    color: 'white'
-  }
+	itemText: {
+		fontFamily: 'open-sans',
+		color: 'white',
+	},
 });

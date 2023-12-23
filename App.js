@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
+import {
+	StyleSheet,
+	ImageBackground,
+	SafeAreaView,
+	StatusBar,
+} from 'react-native';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
@@ -12,16 +17,16 @@ import Colors from './constants/colors';
 const App = () => {
 	const [userNumber, setUserNumber] = useState();
 	const [gameIsOver, setGameIsOver] = useState(true);
-  const [guessRounds, setGuessRounds] = useState(0)
+	const [guessRounds, setGuessRounds] = useState(0);
 
 	const [fontsLoaded] = useFonts({
 		'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
 		'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
 	});
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
+	if (!fontsLoaded) {
+		return <AppLoading />;
+	}
 
 	const pickedNumberHandler = (pickedNumberHandler) => {
 		setUserNumber(pickedNumberHandler);
@@ -30,14 +35,13 @@ const App = () => {
 
 	const gameOverHandler = (numberOfRounds) => {
 		setGameIsOver(true);
-    setGuessRounds(numberOfRounds);
+		setGuessRounds(numberOfRounds);
 	};
 
-  const startNewGameHandler = () => {
-    setUserNumber(null)
-    setGuessRounds(0)
-  }
-  
+	const startNewGameHandler = () => {
+		setUserNumber(null);
+		setGuessRounds(0);
+	};
 
 	let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
 
@@ -48,16 +52,25 @@ const App = () => {
 	}
 
 	if (gameIsOver && userNumber) {
-		screen = <GameOverScreen userNumber={userNumber} roundsNumber={guessRounds} onStartNewGame={startNewGameHandler}></GameOverScreen>;
+		screen = (
+			<GameOverScreen
+				userNumber={userNumber}
+				roundsNumber={guessRounds}
+				onStartNewGame={startNewGameHandler}
+			></GameOverScreen>
+		);
 	}
 
 	return (
-		<ImageBackground
-			source={require('./assets/images/background.png')}
-			style={styles.rootScreen}
-		>
-			<SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
-		</ImageBackground>
+		<>
+			{/* <StatusBar style="dark" /> */}
+			<ImageBackground
+				source={require('./assets/images/background.png')}
+				style={styles.rootScreen}
+			>
+				<SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
+			</ImageBackground>
+		</>
 	);
 };
 

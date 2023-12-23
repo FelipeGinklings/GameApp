@@ -20,7 +20,7 @@ const NumberContainer = ({ children }) => {
 				styles.container,
 				{
 					paddingVertical: paddingVerticalDistance,
-					paddingTop: paddingTopDistance ,
+					paddingTop: paddingTopDistance,
 					paddingHorizontal: paddingHorizontalDistance,
 				},
 			]}
