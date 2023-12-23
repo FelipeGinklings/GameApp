@@ -115,11 +115,11 @@ const GameScreen = ({ userNumber, onGameOver }) => {
 	);
 
 	if (width > 500) {
-    // Change screens style for better view
+		// Change screens style for better view
 		alignItemsDistance = 'center';
 		paddingVertical = 0;
 		widthPercent = '100%';
-    
+
 		content = (
 			<>
 				<InstructionText style={{ marginTop: 15 }}>
@@ -150,7 +150,7 @@ const GameScreen = ({ userNumber, onGameOver }) => {
 		);
 	}
 
-  // Game Screen Style
+	// Game Screen Style
 	const screenStyle = {
 		flex: 1,
 		alignItems: alignItemsDistance,

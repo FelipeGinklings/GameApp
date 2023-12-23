@@ -16,25 +16,25 @@ const GameOverScreen = ({ roundsNumber, userNumber, onStartNewGame }) => {
 	const { height } = useWindowDimensions();
 
 	let imageSize = 300;
-  let fontMarginSize = 24
-  let margin = 36
+	let fontMarginSize = 24;
+	let margin = 36;
 
 	if (height < 400) {
 		imageSize = 130;
-    fontMarginSize = 22
-    margin = fontMarginSize
+		fontMarginSize = 22;
+		margin = fontMarginSize;
 	}
 
 	const imageStyle = {
 		width: imageSize,
 		height: imageSize,
 		borderRadius: imageSize / 2,
-    margin: margin
+		margin: margin,
 	};
-  const summaryTextStyle = {
-    fontSize: fontMarginSize,
-    marginBottom: fontMarginSize,
-  }
+	const summaryTextStyle = {
+		fontSize: fontMarginSize,
+		marginBottom: fontMarginSize,
+	};
 
 	return (
 		<View style={styles.rootContainer}>
