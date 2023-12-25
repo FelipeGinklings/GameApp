@@ -12,7 +12,6 @@ import AppLoading from 'expo-app-loading';
 import StartGameScreen from './screens/StartGameScreen';
 import GameScreen from './screens/GameScreen';
 import GameOverScreen from './screens/GameOverScreen';
-import Colors from './constants/colors';
 
 const App = () => {
 	const [userNumber, setUserNumber] = useState();
@@ -63,7 +62,7 @@ const App = () => {
 
 	return (
 		<>
-			{/* <StatusBar style="dark" /> */}
+			<StatusBar style="light" />
 			<ImageBackground
 				source={require('./assets/images/background.png')}
 				style={styles.rootScreen}
